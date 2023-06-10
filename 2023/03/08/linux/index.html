@@ -71,10 +71,13 @@
             <article class="article-content markdown-body">
                 <pre><code class="shell">#输出日志,-n代表输出最后多少行，-f代表实时监视文件
 #这里实时输出日志的最后2000行
-tail -n 2000 xxx.log
+tail -fn 2000 xxx.log
 
 #复制文件
 cp -r /sourcePath/fileName /targetPath/fileName
+
+#修改文件名
+mv oldFileName newFileName
 
 #解压.zip文件
 unzip zipName
