@@ -16,4 +16,16 @@ touch fileName
 
 #check memory
 free -h
+
+#check hard disk
+df -h
+
+#copy file
+cp /sourceFloder/fileName /tagetFloder/fileName
+
+#modify file name
+mv oldFileName newFileName
+
+#console log,-f option is real time log
+tail -fn 2000 /floder/log.log
 ```
