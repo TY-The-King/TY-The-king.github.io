@@ -1,31 +1,31 @@
 ---
 title: linux order
 date: 2023-03-08 22:04:16
-tags: linux命令
+tags: Linux命令
 categories:
 - 日常记录
 excerpt: Linux常用命令
 comments: false
 ---
 ```shell
-#create folder
+#创建文件夹
 mkdir folderName
 
-#create fileName
+#创建文件
 touch fileName
 
-#check memory
+#查看内存情况
 free -h
 
-#check hard disk
+#查看硬盘情况
 df -h
 
-#copy file
+#复制文件
 cp /sourceFloder/fileName /tagetFloder/fileName
 
-#modify file name
+#修改文件名
 mv oldFileName newFileName
 
-#console log,-f option is real time log
+#打印日志，-f选项是实时打印
 tail -fn 2000 /floder/log.log
 ```

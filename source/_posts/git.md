@@ -4,7 +4,7 @@ date: 2023-03-08 22:01:44
 tags: git命令
 categories:
 - 日常记录
-excerpt: git常用的基础命令已经git commit规范
+excerpt: git常用的基础命令和git commit规范
 comments: false
 ---
 #### git order
