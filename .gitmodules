@@ -1,0 +1,3 @@
+[submodule "themes/hexo-theme-primer"]
+	path = themes/hexo-theme-primer
+	url = https://github.com/TY-The-King/hexo-theme-primer.git

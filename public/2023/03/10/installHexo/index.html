@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <link rel="icon" href="/favicon.ico">
+  
+  <title>TheKing&#39;s Blog | installHexo</title>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/lib/fancybox/jquery.fancybox-1.3.4.css">
+
+  <!--在这里倒入jquery 方便处理部分页面的jquery-->
+  <script src="https://cdn.staticfile.org/jquery/1.7/jquery.min.js" type="text/javascript" ></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+	<header class="site-header navfixed-false">
+  <div class="container">
+      <h1><a href="/" title="TheKing&#39;s Blog"><span class="octicon octicon-mark-github"></span> TheKing&#39;s Blog</a></h1>
+      <nav class="site-header-nav" role="navigation">
+        
+              
+              <a href="/"  class=" site-header-nav-item hvr-underline-from-center" title="Home">Home</a>
+        
+              
+              <a href="/categories/"  class=" site-header-nav-item hvr-underline-from-center" title="Category">Category</a>
+        
+              
+              <a href="/open-source/"  class=" site-header-nav-item hvr-underline-from-center" title="Open-Source">Open-Source</a>
+        
+              
+              <a href="/message/"  class=" site-header-nav-item hvr-underline-from-center" title="Message">Message</a>
+        
+      </nav>
+  </div>
+</header>
+
+	
+<section class="collection-head geopattern" data-pattern-id="installHexo" >
+    <div class="container">
+        <div class="collection-title">
+            <h1 class="collection-header">
+                installHexo
+            </h1>
+            
+                <div class="collection-info">
+                    <span class="meta-info">
+                        <span class="octicon octicon-calendar"></span>
+                        <time datetime="2023-03-10T14:44:48.000Z" itemprop="datePublished">2023-03-10</time>
+                    </span>
+                    
+                        <span class="meta-info">
+                            <span class="octicon octicon-file-directory"></span>
+                            <a href='/categories/Hexo/' title=''>Hexo</a>
+                        </span>
+                    
+                </div>
+            
+        </div>
+    </div>
+</section>
+	<section class="container">
+    <div class="columns">
+        <div class="column  three-fourths " >
+            <article class="article-content markdown-body">
+                <h4 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h4><blockquote>
+<p>本文基于Mac OS环境下搭建Hexo，部署到github</p>
+</blockquote>
+<h4 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h4><p>在安装Hexo之前，需要安装相应的环境：<em>npm_和_Git，可安装本文提示安装，也可去到官网查看</em></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo官网链接：https://hexo.io</a></p>
+</blockquote>
+<ul>
+<li><p>安装npm</p>
+<blockquote>
+<p>可以通过Homebrew安装，也可使用node.js官网提供的.pkg安装包：<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">node.js.pkg下载地址</a></p>
+</blockquote>
+</li>
+<li><p>安装git</p>
+<blockquote>
+<p>同样是通过Homebrew安装</p>
+</blockquote>
+</li>
+</ul>
+<p>以上两个安装完成后，即可开始Hexo的安装</p>
+<pre><code class="shell">#注意：使用命令安装hexo之前，需要先切换成root用户，否则会提示EACCESS错误，即没有权限
+#切换root用户,输入密码，出现sh-3.2,即代表拥有了root权限
+sudo su
+
+#执行安装命令
+npm install -g hexo-cli
+</code></pre>
+<ul>
+<li>init（初始化hexo）</li>
+</ul>
+<p>等安装完成后，即可使用命令在指定文件夹下初始化一个hexo博客文件</p>
+<pre><code class="shell">#init之后是指定要在那个文件夹下初始化hexo
+hexo init ~/Documents/hexo
+
+#进入这个文件夹，下载npm
+cd ~/Documents/hexo
+
+npm install
+</code></pre>
+<hr>
+<ul>
+<li>start server（启动服务）</li>
+</ul>
+<p>这个时候一个hexo博客已经生成完毕，可以启动本地服务查看</p>
+<pre><code class="shell">#生成静态文件，这个命名可缩写为：hexo g
+hexo generate
+#启动本地服务，访问:http://localhost:4000/
+hexo server
+</code></pre>
+<ul>
+<li>deploy（部署GitHub page）</li>
+</ul>
+<p>到这一步可以成功访问，那么离搭建我们自己的博客就只差最后一步，将博客部署到GitHub上了。<br>首先需要在GitHub上新建一个仓库用来放置我们的博客文件</p>
+<blockquote>
+<p>这里需要注意的是：仓库名字需要设置为你自己的用户名+.github.io，如：<br>TY-The-King.github.io</p>
+</blockquote>
+<p>新建仓库完成后，可以安装hexo插件，进行一键部署</p>
+<pre><code class="shell">#安装hexo插件
+npm install hexo-deployer-git --save
+</code></pre>
+<p>接着再去到生成的hexo文件夹下，修改_config.yml文件下的deploy内容：</p>
+<pre><code class="yaml">deploy:
+  type: &#39;git&#39;
+  repo: git@github.com:TY-The-King/TY-The-king.github.io.git
+  branch: master
+</code></pre>
+<p>修改完成后，我们即可使用命令一键部署博客到GitHub page上</p>
+<blockquote>
+<p>在此之前，需要在本地生成github的SSH密钥，如果不生成密钥的话，在部署的时候会要求账户密码，由于github认证的升级，现在无法使用输入密码的方式，需要使用token方式认证，在github中生成一个token当做密码。这种方式十分麻烦，每次deploy部署时都需要输入一次，推荐在本地生成SSH密钥。<br>网上有很多这类教程，这边不再赘述，教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wenfu814/article/details/120625844">github生成SSH密钥</a></p>
+</blockquote>
+<pre><code class="shell">#命令可简化为:hexo d
+hexo deploy
+</code></pre>
+<p>部署完成后，即可访问自己的github page</p>
+<hr>
+<p><img src="/images/installHexo1.png" alt="installHexo1.png"></p>
+
+            </article>
+            
+                <div class="share">
+                    <!--开启分享-->
+<div class="share-component" data-disabled="google,twitter,facebook" data-description="本文基于Mac OS环境下使用Hexo搭建个人博客，并..."></div>
+
+
+<script src="/js/share.min.js"></script>
+
+
+                </div>    
+            
+
+            
+            
+                
+<div class="comments">
+    <div id="gitalk-container"></div>
+        
+<script src="/js/gitalk.js"></script>
+
+        <script>
+            var gitalk = new Gitalk({
+                clientID: "",
+                clientSecret: "",
+                repo: '',
+                owner: '',
+                admin: [''],
+                id: decodeURI('/2023/03/10/installHexo/'),
+            })
+        gitalk.render('gitalk-container')
+        </script>
+</div>
+
+            
+
+        </div>
+        <div class="column one-fourth">
+            
+                
+                
+
+
+<h3>Post Directory</h3>
+
+<div id="post-directory-module">
+	<section class="post-directory">
+		<p><strong class="toc-title">文章目录</strong></p>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%EF%BC%9A"><span class="toc-text">环境：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%96%87%EF%BC%9A"><span class="toc-text">正文：</span></a></li></ol>
+	</section>
+</div>
+            
+        </div>
+    </div>
+</section>
+
+<footer class="container">
+    <div class="site-footer" role="contentinfo">
+        <div class="copyright left mobile-block">
+                © 2023
+                <span title="TY-The-King">TY-The-King</span>
+                <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+        </div>
+
+        <ul class="site-footer-links right mobile-hidden">
+            <li>
+                <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+            </li>
+        </ul>
+
+        <a href="https://github.com/TY-The-King/hexo-theme-primer" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <ul class="site-footer-links mobile-hidden">
+            
+                  
+                  <li>
+                    <a href="/"  title="Home">Home</a>
+                  </li>
+            
+                  
+                  <li>
+                    <a href="/categories/"  title="Category">Category</a>
+                  </li>
+            
+                  
+                  <li>
+                    <a href="/open-source/"  title="Open-Source">Open-Source</a>
+                  </li>
+            
+                  
+                  <li>
+                    <a href="/message/"  title="Message">Message</a>
+                  </li>
+            
+            <li>
+                <a href="/atom.xml">
+                    <span class="octicon octicon-rss" style="color:orange;"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+		
+<script src="/js/geopattern.js"></script>
+
+		
+<script src="/js/highlight.pack.js"></script>
+
+		
+<script src="/lib/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+
+		
+			
+<script src="/js/toc.js"></script>
+
+		
+
+		
+<script src="/js/index.js"></script>
+
+
+		 
+<script src="/js/popular_repo.js"></script>
+ 
+
+	</body>
+</html>

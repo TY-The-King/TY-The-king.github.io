@@ -1,0 +1,18 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.DS_Store\nThumbs.db\ndb.json\n*.log\nnode_modules/\npublic/\n.deploy*/\n_multiconfig.yml
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision fb79d415e46cf9b136a96646eac0823a5d380fff)
++++ b/.gitignore	(date 1678371208085)
+@@ -3,6 +3,4 @@
+ db.json
+ *.log
+ node_modules/
+-public/
+-.deploy*/
+ _multiconfig.yml
+\ No newline at end of file

@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: TheKing's Blog
 subtitle: ''
-description: ''
+description: 'Welcome to my blog'
 keywords:
-author: John Doe
-language: en
+author: TY-The-King
+language: zn
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://TY-The-king.giuhub.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -44,8 +44,8 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
@@ -67,7 +67,7 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-category_map:
+category_map: categories
 tag_map:
 
 # Metadata elements
@@ -97,9 +97,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: hexo-theme-primer
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: 'git'
+  repo: git@github.com:TY-The-King/TY-The-king.github.io.git
+  branch: master
