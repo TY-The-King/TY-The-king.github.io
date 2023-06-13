@@ -86,3 +86,40 @@ hexo deploy
 ---
 
 ![installHexo1.png](/images/installHexo1.png)
+
+- 创建源码分支(create source branch)
+
+> 在成功部署Github Pages的时候，我们会发现，使用"hexo deploy"部署到仓库的只有public文件夹下的静态文件，源码的.md文件并没有保存至仓库中。
+> 那么当我们本地的代码丢失的话，就无法通过仓库找回md源文件了，这个时候我们需要创建一个新的分支来专门保存md源文件。
+
+首先，我们来到hexo项目下，使用git命令创建一个新的分支
+```shell
+#查看当前分支
+git branch -a
+
+#创建source分支
+git branch source
+```
+
+然后将源码文件进行添加和提交操作，如果不想将生成的public下的静态文件一起保存在source分支的话，可以创建一个.gitignore文件决定那些文件纳入管理。
+最后将代码提交至source分支，就完成源码的保存。
+
+```shell
+#创建.gitignore文件,自行配置不纳入git管理的文件
+touch .gitignore
+
+#添加文件
+git add .
+
+#提交文件
+git commit -m 'source first commit'
+
+#将提交的代码保存到source分支
+git push -u origin source
+
+#将分支切换至source
+git checkout source
+```
+
+> ***需要注意的是，_config.yml中配置的deploy配置的branch记得设置为master分支，***
+> ***这样直接使用"hexo d"就能直接将静态文件部署在master分支而不影响源码source分支的保存***

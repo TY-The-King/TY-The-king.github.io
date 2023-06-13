@@ -7,7 +7,7 @@ categories:
 excerpt: git常用的基础命令和git commit规范
 comments: false
 ---
-#### git order
+## git order
 ```shell
 #https方式clone
 git clone https://github.com/YourGitHubName/RepositoriesName.git
@@ -73,7 +73,7 @@ git stash save 'stash comments'
 git checkout fileName
 ```
 
-#### git commit rules
+## git commit rules
 > *type类型*
 > + fix/to：修复BUG，fix产生diff并一次修复，to产生diff，但是不自动修复，适用多次提交，最后一次是fix
 > + feat：增加新功能
