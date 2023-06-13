@@ -157,6 +157,11 @@ comment on column tableName.columnName is &#39;字段注释&#39;;
 
 --3、增加或修改表注释
 comment on table tableName is &#39;表注释&#39;;
+
+--4、排序
+--在排序中可使用case when语句为某个字段的值指定不同的排序，如下，就是将ID不为空的记录指定排序顺序为0，即不为空的记录在最前面，
+--后续可以再按其他规则进行排序,如按创建时间进行排序
+select * from dual order by case when id is not null then 0 else 1 end, createTime desc;
 </code></pre>
 
             </article>
