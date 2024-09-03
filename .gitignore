@@ -1,1 +1,4 @@
 .idea
+.gitignore
+.gitmodules
+.DS_Store
