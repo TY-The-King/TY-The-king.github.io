@@ -8,7 +8,7 @@
 
   <link rel="icon" href="/favicon.ico">
   
-  <title>TheKing&#39;s Blog | linux order</title>
+  <title>TheKing&#39;s Blog | Docker</title>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -36,17 +36,17 @@
 </header>
 
 	
-<section class="collection-head geopattern" data-pattern-id="linux order" >
+<section class="collection-head geopattern" data-pattern-id="Docker" >
     <div class="container">
         <div class="collection-title">
             <h1 class="collection-header">
-                linux order
+                Docker
             </h1>
             
                 <div class="collection-info">
                     <span class="meta-info">
                         <span class="octicon octicon-calendar"></span>
-                        <time datetime="2023-03-08T14:04:16.000Z" itemprop="datePublished">2023-03-08</time>
+                        <time datetime="2024-09-03T07:34:01.000Z" itemprop="datePublished">2024-09-03</time>
                     </span>
                     
                         <span class="meta-info">
@@ -63,42 +63,79 @@
     <div class="columns">
         <div class="column  three-fourths " >
             <article class="article-content markdown-body">
-                <pre><code class="shell">#创建文件夹
-mkdir folderName
-
-#创建文件
-touch fileName
-
-#查看内存情况
-free -h
-
-#查看硬盘情况
-df -h
-
-#解压zip压缩包
-unzip file.zip
-
-#解压tar压缩包
-tar -zxvf file.tar
-
-#删除文件
-rm -rf file
-
-#复制文件
-cp -r /sourceFloder/fileName /tagetFloder/fileName
-
-#修改文件名
-mv oldFileName newFileName
-
-#打印日志，-f选项是实时打印
-tail -fn 2000 /floder/log.log
+                <blockquote>
+<ol>
+<li>check images</li>
+</ol>
+<pre><code class="shell">docker images
 </code></pre>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>check docker status</li>
+</ol>
+<pre><code class="shell">docker ps
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>dowmload image</li>
+</ol>
+<pre><code class="shell">docker save -o fileName.tar imagerId
+</code></pre>
+<pre><code class="shell">docker save -o fileName.tar repositoryName:tag
+</code></pre>
+<pre><code class="shell">docker save repositoryName:tag &gt; fileName.tar
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>modify image tag</li>
+</ol>
+<pre><code class="shell">docker tag imageId tagName:tagVersion
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>import image</li>
+</ol>
+<pre><code class="shell">docker load &lt; fileName.tar
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="6">
+<li>look log</li>
+</ol>
+<pre><code class="shell">docker logs
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="7">
+<li>delete image</li>
+</ol>
+<pre><code class="shell">docker rmi -f imageId
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="8">
+<li>enter docker</li>
+</ol>
+<pre><code class="shell">docker exec -it dckerName /bin/bash
+</code></pre>
+</blockquote>
+<blockquote>
+<ol start="9">
+<li>quit docker</li>
+</ol>
+<pre><code class="shell">exit
+</code></pre>
+</blockquote>
 
             </article>
             
                 <div class="share">
                     <!--开启分享-->
-<div class="share-component" data-disabled="google,twitter,facebook" data-description="Linux常用命令"></div>
+<div class="share-component" data-disabled="google,twitter,facebook" data-description="Docker常用命令"></div>
 
 
 <script src="/js/share.min.js"></script>
@@ -122,7 +159,7 @@ tail -fn 2000 /floder/log.log
                 repo: '',
                 owner: '',
                 admin: [''],
-                id: decodeURI('/2023/03/08/linux/'),
+                id: decodeURI('/2024/09/03/Docker/'),
             })
         gitalk.render('gitalk-container')
         </script>
